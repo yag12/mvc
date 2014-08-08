@@ -165,12 +165,12 @@ class FileUpload {
 	{
 		$filename = array();
 		for($i=0;$i<sizeof($this->file_name);$i++){
-			$filename[$i]['name']	= $this->file_name[$i];
-			$filename[$i]['width']	= $this->width[$i];
-			$filename[$i]['height']	= $this->height[$i];
-			$filename[$i]['str']	= $this->str[$i];
-			$filename[$i]['size']	= $this->size[$i];
-			$filename[$i]['type']	= $this->ftype[$i];
+			$filename[$i]['name']	= !empty($this->file_name[$i]) ? $this->file_name[$i] : '';
+			$filename[$i]['width']	= !empty($this->width[$i]) ? $this->width[$i] : 0;
+			$filename[$i]['height']	= !empty($this->height[$i]) ? $this->height[$i] : 0;
+			$filename[$i]['str']	= !empty($this->str[$i]) ? $this->str[$i] : '';
+			$filename[$i]['size']	= !empty($this->size[$i]) ? $this->size[$i] : 0;
+			$filename[$i]['type']	= !empty($this->ftype[$i]) ? $this->ftype[$i] : '';
 		}
 
 		return $filename;
